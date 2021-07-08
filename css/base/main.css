@@ -280,6 +280,7 @@ body, html {
   background-color: #f6f6f6;
   padding: 2rem 1rem;
 }
+
 .cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
