@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
 @-webkit-keyframes itemAppear {
   0% {
     transform: scale(0);
@@ -15,44 +16,64 @@
     transform: scale(1);
   }
 }
-@-webkit-keyframes loader {
+@-webkit-keyframes spinner {
   100% {
     opacity: 0;
     z-index: -10;
   }
 }
-@keyframes loader {
+@keyframes spinner {
   100% {
     opacity: 0;
     z-index: -10;
   }
 }
-@-webkit-keyframes jump {
-  0% {
-    transform: translateY(0);
+@-webkit-keyframes glow {
+  30% {
+    background: #cc00ff;
   }
-  25% {
-    transform: translateY(0.5rem);
-  }
-  75% {
-    transform: translateY(-0.5rem);
-  }
-  100% {
-    transform: translateY(0);
+  60% {
+    background: #96528d;
   }
 }
-@keyframes jump {
-  0% {
-    transform: translateY(0);
+@keyframes glow {
+  30% {
+    background: #cc00ff;
   }
-  25% {
-    transform: translateY(0.5rem);
+  60% {
+    background: #96528d;
   }
-  75% {
-    transform: translateY(-0.5rem);
+}
+@-webkit-keyframes color {
+  30% {
+    color: #ff00c8;
   }
-  100% {
-    transform: translateY(0);
+  60% {
+    color: #b701ff;
+  }
+}
+@keyframes color {
+  30% {
+    color: #ff00c8;
+  }
+  60% {
+    color: #b701ff;
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 body, html {
@@ -120,50 +141,61 @@ body, html {
   margin-right: 0.5rem;
 }
 
-.loader {
-  position: fixed;
-  height: 100%;
+.spinner {
+  margin: -50px auto;
+  text-align: center;
   width: 100%;
+  position: fixed;
+  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  background: rgba(235, 234, 234, 0.77);
+  -webkit-animation: spinner 0.01s;
+          animation: spinner 0.01s;
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+  transition: 0.5s ease-in-out;
+  padding-top: 380px;
   left: 0;
   top: 0;
   background-color: rgba(255, 255, 255, 0.9);
-  -webkit-animation: loader 0.01s;
-          animation: loader 0.01s;
-  -webkit-animation-delay: 1.75s;
-          animation-delay: 1.75s;
+  animation: spinner 0.01s;
+  animation-delay: 1.75s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.loader__item {
-  height: 1rem;
-  width: 1rem;
-  border-radius: 1rem;
-  -webkit-animation: jump 1s;
-          animation: jump 1s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+.spinner h3 {
+  color: #9356DC;
+  -webkit-animation: infinite 6s ease-in-out color;
+          animation: infinite 6s ease-in-out color;
+  font-weight: 700;
+  font-size: 60px;
+  font-family: "Pacifico", cursive;
 }
-.loader__itemContainer {
-  display: flex;
-  width: 5rem;
-  justify-content: space-between;
+.spinner .wrap {
+  -webkit-animation: infinite 6s linear spin;
+          animation: infinite 6s linear spin;
+  display: inline-block;
 }
-.loader__item--1 {
-  background-color: #9356DC;
+.spinner span {
+  background: #99E2D0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-animation: infinite 3s ease-in-out glow;
+          animation: infinite 3s ease-in-out glow;
 }
-.loader__item--2 {
-  background-color: #FF79DA;
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
+.spinner span:nth-of-type(2) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  transform: translate3D(0, 18px, 0);
 }
-.loader__item--3 {
-  background-color: #99E2D0;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+.spinner span:nth-of-type(3) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 
 .local {

@@ -7,24 +7,45 @@
     }
   }
   
-  @keyframes loader {
+  @keyframes spinner {
     100% {
       opacity: 0;
       z-index: -10;
     }
   } 
   
-  @keyframes jump {
-    0% {
-      transform: translateY(0);
+
+  @keyframes glow {
+    30%{
+      background: #cc00ff;
     }
-    25% {
-      transform: translateY(0.5rem);
+    60%{
+      background: #96528d;
     }
-    75% {
-      transform: translateY(-0.5rem);
+  }
+  
+  @keyframes color {
+    30%{
+      color: #ff00c8;
     }
-    100% {
-      transform: translateY(0);
+    60%{
+      color: #b701ff;
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
     }
   }
