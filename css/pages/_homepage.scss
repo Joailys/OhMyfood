@@ -21,14 +21,14 @@
     animation-delay: 1.75s;
     animation-fill-mode: both;
     z-index: 10000;
-  h3{
+    #loading{
     
-    color: $color-primary;
-    animation: infinite 6s ease-in-out color;
-    font-weight: 700;
-    font-size: 60px;
-    font-family: 'Pacifico', cursive;
-  }
+      color: $color-primary;
+      animation: infinite 6s ease-in-out color;
+      font-weight: 700;
+      font-size: 60px;
+      font-family: 'Pacifico', cursive;
+    }
   .wrap{
     animation: infinite 6s linear spin;
     display: inline-block;
@@ -90,6 +90,7 @@
   
   .tuto {
     padding: ( $appPadding + 1rem ) $appPadding;
+    
   
     &__title {
       margin-top: 0;
@@ -154,6 +155,12 @@
       color: #7e7e7e;
     }
   }
+  .tuto__steps :hover{
+    background-color: #cfb5f0;
+    .tuto__icon{
+      color: #9356DC;
+  }
+}
   
   .restaurants {
     background-color: #f6f6f6;

@@ -166,7 +166,7 @@ body, html {
           animation-fill-mode: both;
   z-index: 10000;
 }
-.spinner h3 {
+.spinner #loading {
   color: #9356DC;
   -webkit-animation: infinite 6s ease-in-out color;
           animation: infinite 6s ease-in-out color;
@@ -306,6 +306,13 @@ body, html {
 .tuto__icon {
   margin-right: 1rem;
   color: #7e7e7e;
+}
+
+.tuto__steps :hover {
+  background-color: #cfb5f0;
+}
+.tuto__steps :hover .tuto__icon {
+  color: #9356DC;
 }
 
 .restaurants {
@@ -562,8 +569,8 @@ body, html {
   align-items: center;
   justify-content: center;
   border-radius: 100px;
-  transform: rotate(180deg);
-  transition-duration: 0.5s;
+  transform: rotate(360deg);
+  transition-duration: 1.5s;
 }
 .menuItem:hover .menuItem__wrapIcon {
   transform: rotate(0);
